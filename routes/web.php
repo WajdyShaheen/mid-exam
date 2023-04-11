@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+
+Route::get('index', [ItemController::class, 'createindex'])->name('allItems');
+
+Route::get('create', [ItemController::class, 'create'])->name('newItem');
+
+Route::post('store', [ItemController::class, 'store'])->name('saveItem');
+
+Route::get('delete', [ItemController::class, 'destroy'])->name('deleteItem');
+
+Route::get('edit', [ItemController::class, 'edit'])->name('editItem');
+
+Route::post('update', [ItemController::class, 'update'])->name('updateItem');
+
+Route::get('/', function ()
+
+{
     return view('welcome');
 });
