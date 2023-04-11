@@ -111,7 +111,7 @@
                     <h1 class="h2">All Expenses</h1>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group mr-2">
-                            <a href="create_product.html" class="btn btn-outline-secondary">Add New Expenses</a>
+                            <a href="{{ route('newItem') }}" class="btn btn-outline-secondary">Add New Expenses</a>
                         </div>
                     </div>
                 </div>
@@ -132,9 +132,8 @@
                                     <td>{{ $item->expense_date }}</td>
                                     <td>{{ $item->amount }} $</td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ route('editItem', $item->amount) }}">Edit</a>
-                                        <a class="btn btn-danger"
-                                            href="{{ route('deleteItem', $item->amount) }}">Delete</a>
+                                        <a class="btn btn-info" href="{{ route('editItem', $item->id) }}">Edit</a>
+                                        <a class="btn btn-danger" href="{{ route('deleteItem', $item->id) }}">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -157,7 +156,5 @@
     <script src="Dashboard%20Template%20%C2%B7%20Bootstrap_files/feather.js"></script>
     <script src="Dashboard%20Template%20%C2%B7%20Bootstrap_files/Chart.js"></script>
     <script src="Dashboard%20Template%20%C2%B7%20Bootstrap_files/dashboard.js"></script>
-
 </body>
-
 </html>

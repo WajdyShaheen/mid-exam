@@ -47,5 +47,5 @@ class ItemController extends Controller
         $item->save();
         return redirect()->route('allItems');
     }
-
+    
 }
